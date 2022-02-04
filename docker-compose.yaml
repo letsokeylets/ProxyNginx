@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  app1:
+    image: 'myapp:4.0'
+    ports:
+      - '8080:8080'
+    build:
+      dockerfile: Dockerfile
+    container_name: 'app4'
+    environment:
+      INSTANCE_NUM: 10
+  app2:
+    image: 'myapp:5.0'
+    ports:
+      - '8081:8080'
+    build:
+      dockerfile: Dockerfile
+    container_name: 'app5'
+    environment:
+      INSTANCE_NUM: 20
+  app3:
+    image: 'myapp:6.0'
+    ports:
+      - '8082:8080'
+    build:
+      dockerfile: Dockerfile
+    container_name: 'app6'
+    environment:
+      INSTANCE_NUM: 30
