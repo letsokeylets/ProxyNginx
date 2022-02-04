@@ -19,8 +19,8 @@ public class AuthorizationController {
         this.service = service;
     }
 
-    @Value("${server.port}")
-    private int port;
+    @Value("${instance.num:0}")
+    private int instance;
 
     @GetMapping("/authorize")
     public List<Authorities> getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password) {
@@ -29,7 +29,7 @@ public class AuthorizationController {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello from port: " + port;
+        return "Hello from instance: " + instance;
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
